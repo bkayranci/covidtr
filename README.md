@@ -1,4 +1,4 @@
-# Covid Turkey Api
+# covidtr - Covid Turkey Api
 
 Covid Turkey Api
 
@@ -30,7 +30,7 @@ The cache timeout is 5 minutes.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install covid-turkey-api.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install covidtr.
 
 ```bash
 pip install -r requirements.txt
