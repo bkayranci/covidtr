@@ -16,6 +16,7 @@ The endpoint returns the last result.
 The endpoint returns the today's result. 
 
 - /results
+
 The endpoint returns all results.
 
 ## Rate Limits
