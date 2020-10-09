@@ -43,6 +43,12 @@ pip install -r requirements.txt
 gunicorn wsgi:app
 ```
 
+## Testing
+```bash
+pip install -r tests/requirements.txt
+pytest
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
