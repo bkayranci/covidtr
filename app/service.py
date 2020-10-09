@@ -1,14 +1,11 @@
 import json
 import re
 from datetime import datetime
-
 import requests
-
 from typing import List
-
-
-from .interface import ResultInterface
+from app.interface import ResultInterface
 from app.main import cache
+from app.helpers import decorate_data_type
 
 
 class ResultService(object):
@@ -67,17 +64,8 @@ class ResultService(object):
         for key in result_dict.keys():
             if key == 'tarih':
                 result_dict[key] = datetime.strptime(result_dict[key], '%d.%m.%Y').isoformat()
-            elif key == 'hastalarda_zaturre_oran':
-                value = result_dict[key].replace(',', '.')
-                try:
-                    result_dict[key] = float(value)
-                except ValueError as _:
-                    result_dict[key] = -1
             else:
-                value = result_dict[key].replace('.', '')
-                try:
-                    result_dict[key] = int(value)
-                except ValueError as _:
-                    result_dict[key] = -1
+                result_dict[key] = decorate_data_type(result_dict[key])
+            
         return result_dict
 

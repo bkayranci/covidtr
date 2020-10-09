@@ -1,5 +1,5 @@
 from flask import jsonify, Blueprint
-from .service import ResultService
+from app.service import ResultService
 
 turkey_bp = Blueprint('turkey_bp', __name__,
                       template_folder='templates',
