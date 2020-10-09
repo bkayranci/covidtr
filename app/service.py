@@ -76,7 +76,11 @@ class ResultService(object):
             else:
                 value = result_dict[key].replace('.', '')
                 try:
-                    result_dict[key] = int(value)
+                    test_value = int(value)
+                    if test_value > 999:
+                        result_dict[key] = test_value
+                    else:
+                        result_dict[key] = float(result_dict[key])
                 except ValueError as _:
                     result_dict[key] = -1
         return result_dict
