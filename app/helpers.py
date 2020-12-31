@@ -51,10 +51,10 @@ def decorate_data_type(value: str or None):
     if isinstance(value, float):
         return value
 
+    
+    value = value.replace('.', '').replace(',', '.')
     point_count = value.count('.')
-
+    
     if point_count == 1:
-        if len(value.split('.')[1]) > 2:
-            return try_int(value.replace('.', ''))
         return try_float(value)
-    return try_int(value.replace('.', ''))
+    return try_int(value)
